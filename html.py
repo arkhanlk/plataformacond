@@ -33,7 +33,7 @@ with tab0:
 
 with tab1:
     # Lê o HTML completo
-    with open(r"index2.html", "r", encoding="utf-8") as f:
+    with open(r"conds\villa solar\index2.html", "r", encoding="utf-8") as f:
         html_code = f.read()
 
     # Renderiza dentro do Streamlit
@@ -140,11 +140,10 @@ with tab2:
                 st.divider()
 
 with tab3:
-    with st.expander("🚀 Desenvolvimento", expanded=False):
+    with st.expander("🚀 Desenvolvimento", expanded=True):
 
         # Estimativa de desenvolvimento
-        with st.container():
-            st.subheader("📅 Estimativa de desenvolvimento")
+        with st.expander("📅 Estimativa de desenvolvimento"):
             st.markdown("Usuários Administrativos: **:blue[10]**")
             st.markdown("Unidades: **:blue[176]**")
             st.markdown("Tipos de Usuários por Unidade: **:blue[Proprietário] e :blue[Morador]** ")
@@ -155,14 +154,13 @@ with tab3:
             st.divider()
 
         # Sistema de recomendação e descontos
-        with st.container():
-            st.subheader("🎯 Recomendações")
+        with st.expander("🎯 Recomendações e Parcerias 🤝 "):
             st.markdown("- Desconto por recomendação a outros condomínios ")
             st.markdown("**:green[10%]** a cada 50 unidades que assinarem o plano de 25/unidade.")
             st.markdown("**:green[100%]** de desconto se o recomendado assinar o plano de 25/unidade com :blue[500 ou mais unidades].")
+
             st.divider()
 
-            st.subheader("🤝 Parcerias")
             st.markdown("- Possibilidade de **:orange[parcerias]** com administrações, seguradoras, construtoras, financeiras, entre outros")
             st.markdown("Adaptação de funcionalidades **:orange[conforme demandas específicas de cada condomínio]**.")
             st.markdown("Flexibilidade para atender **:orange[diferentes perfis de gestão e operação]**.")
@@ -173,6 +171,5 @@ with tab3:
     # Rodapé
     st.divider()
     st.caption("Documento de escopo – Gestão Condominial. Este material descreve requisitos, funcionalidades e diretrizes de entrega para o ciclo inicial de produção.")
-
 
 
