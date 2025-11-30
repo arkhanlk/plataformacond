@@ -140,7 +140,7 @@ with tab2:
                 st.divider()
 
 with tab3:
-    with st.expander("🚀 Desenvolvimento", expanded=True):
+    with st.expander("🚀 Desenvolvimento", expanded=False):
 
         # Estimativa de desenvolvimento
         with st.container():
@@ -173,5 +173,6 @@ with tab3:
     # Rodapé
     st.divider()
     st.caption("Documento de escopo – Gestão Condominial. Este material descreve requisitos, funcionalidades e diretrizes de entrega para o ciclo inicial de produção.")
+
 
 
