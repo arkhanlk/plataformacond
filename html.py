@@ -33,141 +33,143 @@ with tab0:
 
 with tab1:
     # Lê o HTML completo
-    with open(r"index2.html", "r", encoding="utf-8") as f:
+    with open(r"D:\.py\dotaMind\conds\villa solar\index2.html", "r", encoding="utf-8") as f:
         html_code = f.read()
 
     # Renderiza dentro do Streamlit
     st.components.v1.html(html_code, height=800, scrolling=True)
 
-    # Cabeçalho
-    st.title("Plataforma de gestão condominial – MVP")
-    st.caption("Documento de escopo técnico e análise estratégica | Atualizado em 26/11/2025")
-
 with tab2:
-    # Dados estruturados: cada item será renderizado por for loop dentro de containers
+    # Dados estruturados
     condominos_items = [
         {
-            "title": "Cadastro de moradores e ecossistema social",
+            "title": "📇 Cadastro de moradores e ecossistema social",
             "content": [
-                "**Proprietário:** histórico de votação e de presença em assembléias.",
-                "**Morador:** Gestão de vagas, visualização da vizinhança, reservas,perfil de serviços, controle de visitantes da unidade.",
-                "**Cadastro básico e identificação:** Dados essenciais (nome, foto, unidade). Opção opt-in para moradores, mantendo visibilidade para administradores.",
-                "**Marketplace interno:** Espaço para oferta de serviços (ex.: contabilidade, assistência técnica, manicure) e produtos (ex.: alimentos, bebidas), visível a administradores e moradores.",
-                "**Prestadores externos:** Cadastro e avaliação binária (Recomendado/Não recomendado) com comentários (anônimos), auditáveis (e visíveis)pelos administradores.",
-                "**Funcionários internos:** Oferta de serviços complementares com rastreabilidade de execução e histórico.",
-                "**Status de unidades:** Indicador (ocupada, à venda, disponível, em reforma) com regras operacionais (ex.: restrição de aluguel de vagas e notificações específicas para unidades desocupadas).",
+                "**:blue[Proprietário:]** histórico de votação e presença em assembleias.",
+                "**:blue[Morador:]** Gestão de vagas, reservas, perfil de serviços, controle de visitantes.",
+                "**:blue[Cadastro básico:]** Dados essenciais (nome, foto, unidade).",
+                "**:blue[Marketplace interno:]** Oferta de serviços e produtos entre moradores.",
+                "**:blue[Prestadores externos:]** Cadastro e avaliação binária com comentários auditáveis.",
+                "**:blue[Funcionários internos:]** Serviços complementares com rastreabilidade.",
+                "**:blue[Status de unidades:]** Ocupada, à venda, disponível, em reforma.",
             ],
         },
         {
-            "title": "Portaria e gestão de visitantes",
+            "title": "🚪 Portaria e gestão de visitantes",
             "content": [
-                "**Controle de visitantes:** Pré-cadastro de convidados, verificação na portaria e notificações via WhatsApp ou interfone, com rastreabilidade de entradas.",
-                "**Visitantes recorrentes vs novos:** Notificações simplificadas para recorrentes; confirmação por interfone para novos visitantes, elevando a segurança.",
-                "**Gestão de encomendas:** Registro de chegada, alertas automáticos e lembrete via interfone em caso de não retirada.",
+                "**:blue[Controle de visitantes:]** Pré-cadastro, verificação na portaria e notificações.",
+                "**:blue[Recorrentes vs novos:]** Notificações simplificadas para recorrentes; confirmação para novos.",
+                "**:blue[Gestão de encomendas:]** Registro de chegada, alertas e lembretes.",
             ],
         },
         {
-            "title": "Reserva de áreas comuns",
+            "title": "📅 Reserva de áreas comuns e vagas de garagem",
             "content": [
-                "Módulo de agendamento de espaços com calendário de disponibilidade, preços, regras e restrições.",
-                "Integração com agenda de assembleias e reuniões administrativas.",
-            ],
-        },
-        {
-            "title": "Gestão de vagas de garagem",
-            "content": [
-                "**Mapeamento e visualização:** Vagas vinculadas diretamente às unidades, com mapa de ocupação intuitivo para identificação rápida e operação eficiente.",
-                "**Aluguel dinâmico entre moradores:** Concessão temporária ou diária entre unidades, com controle de datas, precificação dinâmica.",
+                "**:blue[Agendamento:]** Espaços com calendário de disponibilidade, preços e regras.", 
+                "**:blue[Mapeamento:]** Vagas vinculadas às unidades, com mapa intuitivo.",
+                "**:blue[Aluguel dinâmico:]** Concessão temporária ou diária entre unidades.",
             ],
         },
     ]
 
     administracao_items = [
         {
-            "title": "Perfis de acesso (SYSADMIN, Administrador, Gestor operacional)",
+            "title": "👥 Perfis de acesso (RBAC com JWT authentication e SaaS multi-tenant.)",
             "content": [
-                "**SYSADMIN:** Gestão de condomínios (criação, exclusão, suspensão), administração de usuários, auditorias e faturamento.",
-                "**Administrador do condomínio:** Inadimplência, avisos, moderação de votações e validação de prestadores.",
-                "**Gestor operacional:** Confirmação de visitantes, registro de encomendas e solicitações de manutenção.",
-                "Modelo RBAC (Role-Based Access Control) com autenticação via JWT e conformidade multi-tenant SaaS.",
+                "**:blue[SYSADMIN:]** Gestão de condomínios, usuários, auditorias e faturamento.",
+                "**:blue[Administrador:]** Inadimplência, avisos, votações e validação de prestadores.",
+                "**:blue[Gestor operacional:]** Visitantes, encomendas e manutenção.",
+                "**:blue[Portaria:]** Workflow completo com registro fotográfico e atribuição de responsáveis.",
             ],
         },
         {
-            "title": "Relatórios e dashboards executivos (KPIs)",
+            "title": "📊 Relatórios e dashboards executivos",
             "content": [
-                "**Ocupação:** Taxa de ocupação por torre e tipologia.",
-                "**Inadimplência:** Indicadores por unidade e histórico por período.",
-                "**Satisfação:** Avaliações de prestadores e NPS interno.",
-                "**Participação:** Taxa de presença em assembleias.",
+                "**:blue[Ocupação:]** Taxa de ocupação por torre e tipologia.",
+                "**:blue[Inadimplência:]** Indicadores por unidade e histórico.",
+                "**:blue[Satisfação:]** Avaliações de prestadores e NPS interno.",
+                "**:blue[Participação:]** Taxa de presença em assembleias.",
             ],
         },
         {
-            "title": "Integração com sistemas legados",
+            "title": "🔗 Integração com sistemas legados e externos",
             "content": [
-                "API para importação e exportação de dados (moradores, unidades, inadimplência, histórico financeiro) via CSV/JSON.",
-                "**Padrões:** autenticação tokenizada, versionamento de endpoints e validação de esquema para garantir integridade.",
+                "**:blue[API:]** Importação/exportação de dados via CSV/JSON.",
+                "**:blue[Padrões:]** Autenticação tokenizada, versionamento de endpoints e validação de esquema.",
+                "**:blue[Google:]** Suite para armazenamento e reuniões.",
+                "**:blue[WhatsApp:]** Automação de contatos e notificações.",
             ],
         },
         {
-            "title": "Inadimplência, assembleias e transparência documental",
+            "title": "📑 Inadimplência, assembleias e transparência documental",
             "content": [
-                "**Controle de inadimplência:** Detecção automatizada e aplicação de restrições (voto, reservas, aluguel de espaços/vagas) para unidades com débitos.",
-                "**Assembleias:** Possibilidade de integração para reuniões online com gravação, transcrição, controle de participantes e auditoria de presenças.",
-                "**Repositório de documentos:** Central de atas, documentos administrativos, prestações de contas e relatórios, com versionamento e trilha de auditoria.",
-                "**Multas e infrações:** Denúncias anônimas com foto e contexto, histórico por unidade e regras para multas automáticas em casos recorrentes.",
-            ],
-        },
-        {
-            "title": "Sistema operacional da portaria",
-            "content": [
-                "Hardware dedicado com Linux em modo Kiosk, acesso exclusivo ao aplicativo de portaria e restrição de funções não relacionadas.",
-                "**Manutenção e solicitações:** Workflow completo (aberto, em andamento, concluído), registro fotográfico e atribuição clara de responsáveis.",
+                "**:blue[Controle de inadimplência:]** Restrições automáticas para unidades com débitos.",
+                "**:blue[Assembleias:]** Integração para reuniões online com gravação e auditoria.",
+                "**:blue[Repositório:]** Central de atas e documentos com versionamento.",
+                "**:blue[Multas:]** Denúncias anônimas com foto e regras automáticas.",
             ],
         },
     ]
 
+    # Expander Condôminos
     with st.expander("🏡 Condôminos", expanded=True):
-        for item in condominos_items:
+        st.info("📌 Módulo voltado para moradores e proprietários.")
+        for idx, item in enumerate(condominos_items):
             with st.container():
-                    st.subheader(item["title"])
-                    for line in item["content"]:
-                        st.markdown(f"- {line}")
+                st.subheader(item["title"])
+                # Divide em duas colunas para leitura mais leve
+                col1, col2 = st.columns(2)
+                half = len(item["content"]) // 2
+                for line in item["content"][:half]:
+                    col1.markdown(f"- {line}")
+                for line in item["content"][half:]:
+                    col2.markdown(f"- {line}")
+            # só adiciona divider se não for o último
+            if idx < len(condominos_items) - 1:
+                st.divider()
 
-
+    # Expander Administração
     with st.expander("🏢 Administração", expanded=True):
-        for item in administracao_items:
+        st.success("✅ Essencial para governança e transparência.")
+        for idx, item in enumerate(administracao_items):
             with st.container():
                 st.subheader(item["title"])
                 for line in item["content"]:
                     st.markdown(f"- {line}")
+            if idx < len(administracao_items) - 1:
+                st.divider()
 
-    with tab3:
-        tasks = [
-            {
-                "title": "Estimativa de desenvolvimento",
-                "content": [
-                    "Prazo do MVP: aproximadamente 3 meses, distribuídos em 4 sprints.",
-                    "**Critérios de sucesso:**",
-                    "Onboarding funcional (API e importadores CSV/JSON) com preservação de histórico.",
-                    "RBAC operante e portaria em modo Kiosk estável.",
-                    "Dashboards com KPIs prioritários e fluxo de reservas publicado.",
-                    "Módulo de inadimplência com regras de bloqueio e trilha de auditoria.",
-                ],
-            }
-        ]
+with tab3:
+    with st.expander("🚀 Desenvolvimento", expanded=True):
 
-        with st.expander("Desenvolvimento", expanded=True):
-            for item in tasks:
-                with st.container():
-                    st.subheader(item["title"])
-                    # Renderiza a primeira linha como texto normal e as demais como lista
-                    if item["content"]:
-                        st.write(item["content"][0])  # texto introdutório
-                        for line in item["content"][1:]:
-                            st.markdown(f"- {line}")
+        # Estimativa de desenvolvimento
+        with st.container():
+            st.subheader("📅 Estimativa de desenvolvimento")
+            st.markdown("Usuários Administrativos: **:blue[10]**")
+            st.markdown("Unidades: **:blue[176]**")
+            st.markdown("Tipos de Usuários por Unidade: **:blue[Proprietário] e :blue[Morador]** ")
+            st.markdown("Total de :blue[176] Usuários do tipo **:blue[Proprietário] e :blue[176] Usuários do tipo :blue[Morador]** ")
+    
+            st.header("Expectativa de desenvolvimento: **:blue[3 meses]**")
+            st.write("Preço de **:green[R$25]** por unidade para todas as funcionalidades.")
+            st.divider()
 
+        # Sistema de recomendação e descontos
+        with st.container():
+            st.subheader("🎯 Recomendações")
+            st.markdown("- Desconto por recomendação a outros condomínios ")
+            st.markdown("**:green[10%]** a cada 50 unidades que assinarem o plano de 25/unidade.")
+            st.markdown("**:green[100%]** de desconto se o recomendado assinar o plano de 25/unidade com :blue[500 ou mais unidades].")
+            st.divider()
+
+            st.subheader("🤝 Parcerias")
+            st.markdown("- Possibilidade de **:orange[parcerias]** com administrações, seguradoras, construtoras, financeiras, entre outros")
+            st.markdown("Adaptação de funcionalidades **:orange[conforme demandas específicas de cada condomínio]**.")
+            st.markdown("Flexibilidade para atender **:orange[diferentes perfis de gestão e operação]**.")
+            st.markdown("Oferecimento de **:orange[integrações com ferramentas diversas]**.")
+            st.markdown("Fornecimento de computadores **:orange[dedicados para portaria e administração]**, com Linux seguro e estável.")
+            
 
     # Rodapé
     st.divider()
     st.caption("Documento de escopo – Gestão Condominial. Este material descreve requisitos, funcionalidades e diretrizes de entrega para o ciclo inicial de produção.")
-
