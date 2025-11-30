@@ -33,7 +33,7 @@ with tab0:
 
 with tab1:
     # Lê o HTML completo
-    with open(r"D:\.py\dotaMind\conds\villa solar\index2.html", "r", encoding="utf-8") as f:
+    with open(r"index2.html", "r", encoding="utf-8") as f:
         html_code = f.read()
 
     # Renderiza dentro do Streamlit
@@ -173,3 +173,4 @@ with tab3:
     # Rodapé
     st.divider()
     st.caption("Documento de escopo – Gestão Condominial. Este material descreve requisitos, funcionalidades e diretrizes de entrega para o ciclo inicial de produção.")
+
