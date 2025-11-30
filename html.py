@@ -112,7 +112,7 @@ with tab2:
     ]
 
     # Expander Condôminos
-    with st.expander("🏡 Condôminos", expanded=True):
+    with st.expander("🏡 Condôminos", expanded=False):
         st.info("📌 Módulo voltado para moradores e proprietários.")
         for idx, item in enumerate(condominos_items):
             with st.container():
@@ -129,7 +129,7 @@ with tab2:
                 st.divider()
 
     # Expander Administração
-    with st.expander("🏢 Administração", expanded=True):
+    with st.expander("🏢 Administração", expanded=False):
         st.success("✅ Essencial para governança e transparência.")
         for idx, item in enumerate(administracao_items):
             with st.container():
@@ -173,4 +173,5 @@ with tab3:
     # Rodapé
     st.divider()
     st.caption("Documento de escopo – Gestão Condominial. Este material descreve requisitos, funcionalidades e diretrizes de entrega para o ciclo inicial de produção.")
+
 
