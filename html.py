@@ -157,7 +157,7 @@ with tab3:
         with st.expander("🎯 Recomendações e Parcerias 🤝 "):
             st.markdown("- Desconto por recomendação a outros condomínios ")
             st.markdown("**:green[10%]** a cada 50 unidades que assinarem o plano de 25/unidade.")
-            st.markdown("**:green[100%]** de desconto se o recomendado assinar o plano de 25/unidade com :blue[500 ou mais unidades].")
+            st.markdown("Máximo de **:blue[50%]** de desconto se o recomendado assinar o plano de 25/unidade com :blue[250 ou mais unidades].")
 
             st.divider()
 
@@ -171,6 +171,7 @@ with tab3:
     # Rodapé
     st.divider()
     st.caption("Documento de escopo – Gestão Condominial. Este material descreve requisitos, funcionalidades e diretrizes de entrega para o ciclo inicial de produção.")
+
 
 
 
